@@ -1,10 +1,7 @@
 package user;
 
 import batting.Money;
-import card.Card;
-
-import java.util.ArrayList;
-import java.util.List;
+import card.Cards;
 
 /**
  * @author gutenlee
@@ -13,9 +10,11 @@ import java.util.List;
 public abstract class User {
 
     private final Money money;
-    private final List<Card> cardList = new ArrayList<>();
+    private final Cards holdingCards;
 
     public User(Money money) {
         this.money = money;
+        this.holdingCards = Cards.init();
     }
+
 }
