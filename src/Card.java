@@ -4,6 +4,6 @@
  * 카드 객체
  */
 public class Card {
-	private String name;
-	private String shape;
+	private Number number;
+	private Shape shape;
 }

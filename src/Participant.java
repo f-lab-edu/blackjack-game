@@ -4,5 +4,6 @@
  * 참가자 객체
  */
 public class Participant extends User {
-	private int battingMoney;
+	private int battingMoney;//금액
+	private MoneyUnit moneyUnit;//단위
 }
