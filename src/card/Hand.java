@@ -7,10 +7,12 @@ import java.util.List;
  * @author gutenlee
  * @since 2023/06/19
  */
-public class Cards {
+public class Hand {
     private final List<Card> cardList = new ArrayList<>();
 
-    public static Cards init() {
-        return new Cards();
+    private Hand() {}
+
+    public static Hand create() {
+        return new Hand();
     }
 }

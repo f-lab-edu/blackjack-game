@@ -11,8 +11,9 @@ public enum CardType {
 
     public static CardType getCardType(int number) {
 
-        if (number < 2 || number > 14)
+        if (number < 2 || 14 < number) {
             return UNDEFINED;
+        }
 
         switch (number) {
             case 11 : {
