@@ -21,8 +21,9 @@ public class Card {
     private CardType getCardType(int number) {
 
         CardType type = CardType.getCardType(number);
-        if (cardType == UNDEFINED)
+        if (cardType == UNDEFINED) {
             throw new IllegalArgumentException("카드 번호 범위 초과");
+        }
 
         return type;
     }
