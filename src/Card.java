@@ -4,6 +4,10 @@
  * 카드 객체
  */
 public class Card {
-	private Number number;
-	private Shape shape;
+	private final Number number;
+	private final Shape shape;
+	public Card(final Number number, final Shape shape) {
+		this.number = number;
+		this.shape = shape;
+	}
 }

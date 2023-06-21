@@ -6,5 +6,6 @@ import java.util.List;
  *
  */
 public class User {
+	private Money holdingMoney;
 	private List<Card> holdingCardList;
 }

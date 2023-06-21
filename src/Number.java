@@ -17,7 +17,7 @@ public enum Number {
 	J(10),
 	Q(10),
 	K(10);
-	private int num;
+	private final int num;
 
 	Number(int num) {
 		this.num = num;
