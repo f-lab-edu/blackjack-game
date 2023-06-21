@@ -1,7 +1,8 @@
 package user;
 
 import batting.Money;
-import card.Hand;
+import card.Card;
+import card.CardHolder;
 
 /**
  * @author gutenlee
@@ -9,12 +10,17 @@ import card.Hand;
  */
 public abstract class User {
 
-    private final Money money;
-    private final Hand holdingHand;
+    protected final Money money;
+    private final CardHolder cardHolder;
 
     public User(Money money) {
         this.money = money;
-        this.holdingHand = Hand.create();
+        this.cardHolder = CardHolder.create();
     }
+
+    public void receiveCard(Card card) {
+        cardHolder.addCard(card);
+    }
+
 
 }

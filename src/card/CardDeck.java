@@ -8,7 +8,7 @@ import java.util.Stack;
  * @since 2023/06/18
  */
 public class CardDeck {
-    private Stack<Card> cardList;
+    private Stack<Card> cardList = new Stack<>();
 
     private CardDeck() {
         initCardDeck();
@@ -41,4 +41,7 @@ public class CardDeck {
         }
     }
 
+    public Card giveCard() {
+        return cardList.pop();
+    }
 }
