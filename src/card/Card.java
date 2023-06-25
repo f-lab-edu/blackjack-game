@@ -1,5 +1,7 @@
 package card;
 
+
+import static card.CardType.NUMBER;
 import static card.CardType.UNDEFINED;
 
 /**
@@ -26,5 +28,10 @@ public class Card {
         }
 
         return type;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("[ %s, %s, %s ]", cardType, (cardType==NUMBER ? number : ""), suit);
     }
 }

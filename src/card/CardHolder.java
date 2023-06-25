@@ -20,4 +20,7 @@ public class CardHolder {
         cardList.add(card);
     }
 
+    public List<Card> getCardList() {
+        return cardList;
+    }
 }

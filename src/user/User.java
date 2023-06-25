@@ -11,7 +11,7 @@ import card.CardHolder;
 public abstract class User {
 
     protected final Money money;
-    private final CardHolder cardHolder;
+    protected final CardHolder cardHolder;
 
     public User(Money money) {
         this.money = money;
@@ -21,6 +21,5 @@ public abstract class User {
     public void receiveCard(Card card) {
         cardHolder.addCard(card);
     }
-
 
 }
