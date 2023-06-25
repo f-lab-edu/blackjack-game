@@ -1,9 +1,11 @@
 import batting.Money;
+import card.Card;
 import card.CardDeck;
+import card.CardViewer;
 import user.Dealer;
 import user.Gamer;
+import user.User;
 
-import java.lang.reflect.Member;
 import java.util.Scanner;
 
 /**
@@ -12,6 +14,7 @@ import java.util.Scanner;
  */
 public class GameApp {
     public static void main(String[] args) {
+
         System.out.println("========[블랙잭 게임 입장]========");
 
         Gamer gamer = new Gamer(new Money());
@@ -25,13 +28,17 @@ public class GameApp {
         gamer.bat(battingMoney);
 
         CardDeck cardDeck = CardDeck.create();
-        gamer.receiveCard(cardDeck.giveCard());
-        gamer.receiveCard(cardDeck.giveCard());
-        dealer.receiveCard(cardDeck.giveCard());
-        dealer.receiveCard(cardDeck.giveCard());
+        giveCards(gamer, cardDeck, 2);
+        giveCards(dealer, cardDeck, 2);
 
-        gamer.openCard();
-        dealer.openCard();
+        Card openFirstCard = dealer.openFirstCard();
+        CardViewer.print(openFirstCard);
+    }
+
+    private static void giveCards(User user, CardDeck cardDeck, int giveCardCount) {
+        for (int i = 0; i < giveCardCount; i++) {
+            user.receiveCard(cardDeck.giveCard());
+        }
     }
 
 }

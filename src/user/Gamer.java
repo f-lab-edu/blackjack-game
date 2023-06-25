@@ -1,12 +1,15 @@
 package user;
 
 import batting.Money;
+import card.Card;
+
+import java.util.List;
 
 /**
  * @author gutenlee
  * @since 2023/06/18
  */
-public class Gamer extends User implements Openable {
+public class Gamer extends User  {
 
     public Gamer(Money money) {
         super(money);
@@ -16,8 +19,5 @@ public class Gamer extends User implements Openable {
         super.money.setBattingMoney(battingMoney);
     }
 
-    @Override
-    public void openCard() {
-        System.out.println("Gamer Card " + cardHolder.getCardList());
-    }
+
 }
