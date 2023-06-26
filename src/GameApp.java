@@ -1,6 +1,7 @@
 import batting.Money;
 import card.Card;
 import card.CardDeck;
+import card.CardHolderEmptyException;
 import card.CardViewer;
 import user.Dealer;
 import user.Gamer;
@@ -8,10 +9,7 @@ import user.User;
 
 import java.util.Scanner;
 
-/**
- * @author gutenlee
- * @since 2023/06/25
- */
+
 public class GameApp {
     public static void main(String[] args) {
 
@@ -31,7 +29,14 @@ public class GameApp {
         giveCards(gamer, cardDeck, 2);
         giveCards(dealer, cardDeck, 2);
 
-        Card openFirstCard = dealer.openFirstCard();
+        Card openFirstCard = null;
+        try {
+            openFirstCard = dealer.openFirstCard();
+        } catch (CardHolderEmptyException e){
+            System.out.println("딜러에게 카드가 없습니다. 게임을 종료합니다");
+            return;
+        }
+
         CardViewer.print(openFirstCard);
     }
 

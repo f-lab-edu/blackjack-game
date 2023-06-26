@@ -27,5 +27,17 @@ class CardHolderTest {
         });
     }
 
+    @Test
+    @DisplayName("카드 홀더에 카드가 없을 경우 첫번째 카드를 요청하면 CardHolderEmptyException 발생한다.")
+    void whenGetFirstCardEmpty() throws Exception {
+
+        CardHolder cardHolder = CardHolder.create();
+
+        assertThrows(CardHolderEmptyException.class, cardHolder::getFirstCard);
+
+    }
+
+
+
 
 }

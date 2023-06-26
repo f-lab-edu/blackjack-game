@@ -23,7 +23,7 @@ public class CardHolder {
         if (hasCards()) {
             return new Card(cardList.get(0));
         }
-        return null;
+        throw new CardHolderEmptyException();
     }
 
     public List<Card> getAllCard() {

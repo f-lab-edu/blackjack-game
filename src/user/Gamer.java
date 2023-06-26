@@ -1,9 +1,7 @@
 package user;
 
 import batting.Money;
-import card.Card;
 
-import java.util.List;
 
 /**
  * @author gutenlee

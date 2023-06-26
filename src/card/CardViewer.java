@@ -1,8 +1,7 @@
 package card;
 
 import java.util.List;
-
-import static card.CardType.NUMBER;
+import java.util.StringJoiner;
 
 /**
  * @author gutenlee
@@ -20,12 +19,15 @@ public class CardViewer {
         }
     }
 
-    private static String getCardInfo(Card card) {
+    public static String getCardInfo(Card card) {
 
-        CardType cardType = card.getCardType();
-        int cardNumber = card.getNumber();
-        Suit suit = card.getSuit();
+        StringJoiner sj = new StringJoiner(", ", "[","]");
+        sj.add(card.getCardType().name());
+        sj.add(card.getSuit().name());
+        if (card.isNumber()) {
+            sj.add(Integer.toString(card.getNumber()));
+        }
 
-        return String.format("[ %s, %s, %s ]", cardType, (cardType==NUMBER ? cardNumber : ""), suit);
+        return sj.toString();
     }
 }

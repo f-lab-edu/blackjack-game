@@ -33,6 +33,10 @@ public class Card {
         return type;
     }
 
+    public boolean isNumber(){
+        return NUMBER == cardType;
+    }
+
 
     public CardType getCardType() {
         return cardType;
