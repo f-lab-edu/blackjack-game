@@ -1,21 +1,35 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * @author jhkim
  * @since 2023/06/18
- * 카드덱 객체
  */
 public class CardDeck {
-	private List<Card> cardDeck;
+	private Queue<Card> cardDeck;
 
-	public void settingCard() {
-		cardDeck = new ArrayList<>();
+	{
+		cardDeck = new LinkedList<>();
+		List<Card> shuffleCardList = new ArrayList<>();
 		for (Shape shape : Shape.values()) {
-			for (Number number : Number.values()) {
-				Card card = new Card(number, shape);
-				cardDeck.add(card);
+			for (CardNumber cardNumber : CardNumber.values()) {
+				Card card = new Card(cardNumber, shape);
+				shuffleCardList.add(card);
 			}
 		}
+		Collections.shuffle(shuffleCardList);
+		cardDeck.addAll(shuffleCardList);
 	}
+
+	public List<Card> distributeCard(int count) {
+		List<Card> drawnCardList = new ArrayList<>();
+		for (int i = 0; i < count; i++) {
+			drawnCardList.add(cardDeck.poll());
+		}
+		return drawnCardList;
+	}
+
 }

@@ -1,9 +1,8 @@
 /**
  * @author jhkim
  * @since 2023/06/18
- * 카드의 번호 enum클래스
  */
-public enum Number {
+public enum CardNumber {
 	A(1),
 	TWO(2),
 	THREE(3),
@@ -19,7 +18,7 @@ public enum Number {
 	K(10);
 	private final int num;
 
-	Number(int num) {
+	CardNumber(int num) {
 		this.num = num;
 	}
 }
