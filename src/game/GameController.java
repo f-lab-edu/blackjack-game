@@ -1,13 +1,17 @@
+package game;
+
 import java.util.Scanner;
+
+import money.Money;
+import money.MoneyUnit;
 
 /**
  * @author jhkim
- * @since 2023/06/18
- * 참가자 객체
+ * @since 2023/06/27
+ *
  */
-public class Participant extends User {
-
-	public void settingBattingMoney() {
+public class GameController {
+	public Money getParticipantBattingMoney() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("> 배팅금액을 입력하세요");
 		int battingMoney = sc.nextInt();
@@ -15,9 +19,6 @@ public class Participant extends User {
 		System.out.println("> 배팅금액 화폐 단위를 입력하세요." + MoneyUnit.getMoneyUnitList());
 		String moneyUnitVal = sc.next();
 
-		System.out.println("입력하신 금액 : " + battingMoney + moneyUnitVal);
-		super.setHoldingMoney(new Money(battingMoney, MoneyUnit.valueOf(moneyUnitVal)));
-
+		return new Money(battingMoney, MoneyUnit.valueOf(moneyUnitVal));
 	}
-
 }

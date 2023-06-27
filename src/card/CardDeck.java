@@ -1,3 +1,5 @@
+package card;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -25,6 +27,9 @@ public class CardDeck {
 	}
 
 	public List<Card> distributeCard(int count) {
+		if (count < 0 || count < 2) {
+			throw new IllegalArgumentException("요청 카드 수는 2장 이하여야합니다.");
+		}
 		List<Card> drawnCardList = new ArrayList<>();
 		for (int i = 0; i < count; i++) {
 			drawnCardList.add(cardDeck.poll());
