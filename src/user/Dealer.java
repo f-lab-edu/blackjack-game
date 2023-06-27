@@ -1,6 +1,7 @@
 package user;
 
 import batting.Money;
+import card.Card;
 
 /**
  * @author gutenlee
@@ -12,4 +13,7 @@ public class Dealer extends User {
         super(money);
     }
 
+    public Card openFirstCard() {
+        return cardHolder.getFirstCard();
+    }
 }

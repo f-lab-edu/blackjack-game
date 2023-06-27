@@ -1,5 +1,7 @@
 package card;
 
+
+import static card.CardType.NUMBER;
 import static card.CardType.UNDEFINED;
 
 /**
@@ -17,6 +19,9 @@ public class Card {
         this.suit = suit;
     }
 
+    public Card(Card that) {
+        this(that.number, that.suit);
+    }
 
     private CardType getCardType(int number) {
 
@@ -26,5 +31,22 @@ public class Card {
         }
 
         return type;
+    }
+
+    public boolean isNumber(){
+        return NUMBER == cardType;
+    }
+
+
+    public CardType getCardType() {
+        return cardType;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public Suit getSuit() {
+        return suit;
     }
 }

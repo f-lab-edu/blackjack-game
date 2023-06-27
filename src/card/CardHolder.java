@@ -1,7 +1,6 @@
 package card;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author gutenlee
@@ -18,6 +17,22 @@ public class CardHolder {
 
     public void addCard(Card card) {
         cardList.add(card);
+    }
+
+    public Card getFirstCard() {
+        if (hasCards()) {
+            return new Card(cardList.get(0));
+        }
+        throw new CardHolderEmptyException();
+    }
+
+    public List<Card> getAllCard() {
+        return Collections.unmodifiableList(cardList);
+    }
+
+
+    private boolean hasCards(){
+        return cardList.size() > 0;
     }
 
 }
